@@ -3,17 +3,16 @@ package AdventOfCode2022
 import (
 	"errors"
 	"fmt"
-	"os"
 	"sort"
 	"strconv"
 	"strings"
 )
 
 func Day1() {
-	for i, n := range []int{1, 3} {
+	for _, n := range []int{1, 3} {
 		answer, err := sumTopN(caloriesInGroup(), n)
 		check(err)
-		fmt.Println(i+1, answer)
+		fmt.Println(answer)
 	}
 }
 
@@ -21,13 +20,6 @@ func check(e error) {
 	if e != nil {
 		panic(e)
 	}
-}
-
-func getData() string {
-	file := "AdventOfCode2022/input/day1_real.txt"
-	fileContents, err := os.ReadFile(file)
-	check(err)
-	return string(fileContents)
 }
 
 func getCalorieGroups(data string) []string {
@@ -57,7 +49,7 @@ func sumTopN(array []int, n int) (int, error) {
 }
 
 func caloriesInGroup() []int {
-	foodGroups := getCalorieGroups(getData())
+	foodGroups := getCalorieGroups(getData("AdventOfCode2022/input/day1_real.txt"))
 	var allCalories []int
 	for i := range foodGroups {
 		allCalories = append(allCalories, sumCaloriesInGroup(foodGroups[i]))
