@@ -8,5 +8,6 @@ func main() {
 	//AdventOfCode2022.Day2()
 	//AdventOfCode2022.Day3()
 	//AdventOfCode2022.Day4()
-	AdventOfCode2022.Day5()
+	//AdventOfCode2022.Day5()
+	AdventOfCode2022.Day6()
 }
